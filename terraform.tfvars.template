@@ -1,0 +1,4 @@
+sg_whitelisted_pub_ips = [ "" ]
+ec2_image_id = "ami-0fdea1f4a0d71ff5c"
+db_name = ""
+db_engine_version = "12.19"
