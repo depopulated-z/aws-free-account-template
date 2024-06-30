@@ -1,4 +1,12 @@
-sg_whitelisted_pub_ips = [ "" ]
-ec2_image_id = "ami-0fdea1f4a0d71ff5c"
-db_name = ""
-db_engine_version = "12.19"
+# security group settings
+sg_whitelisted_pub_ips = [ "0.0.0.0/0" ]
+
+# ec2 settings
+ec2_image_id = "ami-003c463c8207b4dfa"
+
+# database settings
+db_rds_name        = "rds-instance-name"
+db_database_name   = "database-name"
+db_master_username = "username"
+db_engine          = "postgres"
+db_engine_version  = "12.19"
