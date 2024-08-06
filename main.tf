@@ -18,6 +18,7 @@ module "aws_security_groups" {
 module "aws_ec2_server" {
   source                      = "./modules/aws_ec2_server"
   ami_id                      = var.ec2_image_id
+  os                          = var.ec2_os
 
   webserver_security_group_id = "${module.aws_security_groups.webserver_seurity_group_id}"
 }
