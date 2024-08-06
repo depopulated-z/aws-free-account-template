@@ -1,3 +1,11 @@
+locals {
+  image_map = {
+    ubuntu = "ami-060e277c0d4cce553" # Ubuntu Server 24.04 LTS (HVM), SSD Volume Type
+    linux  = "ami-009c9406091cbd65a" # Amazon Linux 2023 AMI
+    debian = "ami-0c185732ad1b6169b" # Debian 12 (HVM), SSD Volume Type
+  }
+}
+
 data "aws_ami" "image" {
   most_recent = true
   owners      = [ "amazon" ]
@@ -14,7 +22,7 @@ resource "aws_key_pair" "maintainer_key" {
 }
 
 resource "aws_instance" "server" {
-  ami                    = var.ami_id
+  ami                    = try(var.ami_id, local.local.image_map[var.os])
   instance_type          = var.instance_type
 
   vpc_security_group_ids = ["${var.webserver_security_group_id}"]

@@ -2,7 +2,8 @@
 sg_whitelisted_pub_ips = [ "0.0.0.0/0" ]
 
 # ec2 settings
-ec2_image_id = "ami-003c463c8207b4dfa"
+# ec2_image_id = "ami-003c463c8207b4dfa"
+ec2_os       = "linux"
 
 # database settings
 db_rds_name        = "rds-instance-name"
